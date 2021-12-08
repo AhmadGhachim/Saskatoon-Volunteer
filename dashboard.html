@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .heading{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 32px;
+        }
+        .sbuttons p{
+            text-align: center;
+            color: #111;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .sbuttons p > button{
+            background: transparent;
+            color: black;
+            border: 2px solid black;
+            border-radius: 25px;
+            text-align: center;
+            width: 270px;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+        .sbuttons p > button:hover{
+            background-color:#5baa8e;
+            color: black;
+            font-weight: bold;
+            -webkit-transition: all 0.4s;
+            -moz-transition: all 0.4s;
+            transition: all 0.4s;
+        }
+
+        .sbuttons p > button:focus{
+            background-color:#5baa8e;
+            font-weight: bold;
+            color: black;
+        }
+
+        #staff {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+        }
+
+        #staff td, #staff th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #staff tr:nth-child(even){background-color: #f2f2f2;}
+
+        #staff tr:hover {background-color: #ddd;}
+
+        #staff th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #5baa8e;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class = "heading">
+    <h1>Staff Table</h1>
+</div>
+
+<div class="sbuttons">
+    <p><button type="button" class="button button1">Add Staff</button></p>
+    <p><button type="button" class="button button2">Delete Staff</button></p>
+    <p><button type="button" class="button button3">Edit Selected Staff</button></p>
+</div>
+
+
+<table id="staff">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Age</th>
+        <th>Department</th>
+    </tr>
+    <tr>
+        <td>John Doe</td>
+        <td>150 main St, Saskatoon</td>
+        <td>doe@gmail.com</td>
+        <td>306000000</td>
+        <td>25</td>
+        <td>Soup Kitchen</td>
+    </tr>
+
+
+</table>
+
+</body>
+</html>
