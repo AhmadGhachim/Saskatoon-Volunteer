@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Volunteer Saskatoon | Register</title>
+    <title>Volunteer Saskatoon | Request</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -16,10 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 
-    
-
-
-
 
 </head>
 
@@ -29,7 +25,7 @@
         </span>
         <span style="margin-left:40px;"><i class="fa fa-phone" aria-hidden="true"></i> +306 000 000</span>
         <div class="button-area">
-            <a href="Log_in.html"> Admin Login</a>
+            <a href="components/Login.js"> Admin Login</a>
           </div>
     </div>
     <header id="header">
@@ -87,19 +83,19 @@
                 <form method="POST" id="appointment" onsubmit="return submitForm()">
                     <div class="field">
                         <label>NAME</label>
-                        <input type="text" name="name" id="name" size="50">
+                        <input type="text" name="name" id="name" size="50" placeholder="Ex. John Doe">
                     </div>
                     <div class="field">
                         <label>EMAIL</label>
-                        <input type="email" name="email" id="email" size="50">
+                        <input type="email" name="email" id="email" size="50" placeholder="Ex. info@volunteer-saskatoon.ca">
                     </div>
                     <div class="field">
                         <label>PHONE</label>
-                        <input type="phone" name="Phone" id="Phone" size="50">
+                        <input type="tel" name="Phone" id="Phone" size="50" placeholder="Ex. 306-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
                     </div>
                     <div class="field">
                         <label>ADDRESS</label>
-                        <input type="text" name="address" id="address" min-size="50">
+                        <input type="text" name="address" id="address" min-size="50" placeholder="Ex. 150 Main St, Saskatoon">
                     </div>
                     <div class="field">
                         <label>SERVICE</label>
@@ -145,7 +141,7 @@
      </h2>
      <p>
      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-     <a href="register.html">Requests</a>
+     <a href="register.html">Request</a>
      </p>
     
      <p>
