@@ -16,13 +16,15 @@ Header
   font-weight: 500;
   font-family: "Sofia", sans-serif;
   font-size: 15px;
+
 }
 .upper-bar span .fa{
   margin-right: 3px;
 }
 .upper-bar .button-area{
-  width: 70%;
+  width: 60%;
   text-align: right;
+
 }
 .upper-bar .button-area a{
   text-decoration: none;
