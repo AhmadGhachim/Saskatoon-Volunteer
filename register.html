@@ -29,7 +29,7 @@
         </span>
         <span style="margin-left:40px;"><i class="fa fa-phone" aria-hidden="true"></i> +306 000 000</span>
         <div class="button-area">
-            <a href="Log_in.html">Login</a>
+            <a href="Log_in.html"> Admin Login</a>
           </div>
     </div>
     <header id="header">
@@ -45,32 +45,22 @@
                     <b>Volunteer</b> Saskatoon
                 </div>
                 <ul>
+                    <li>
+                        <a href="index.html">Home </a>
+                    </li>
+                    <li>
+                        <a href="browse.html">Browse</a>
+                    </li>
+                    <li>
+                        <a href="register.html">Request</a>
+                    </li>
 
                     <li>
-                        <a
-                            href="index.html">Home </a>
+                        <a href="contact_us.html">Contact Us</a>
                     </li>
                     <li>
-                        <a 
-                        href="browse.html">Browse</a>
+                        <a href="about_us.html">About</a>
                     </li>
-                    <li>
-                        <a 
-                        href="register.html">Register</a>
-                    </li>
-                    
-                    <li>
-                        <a 
-                            href="contact_us.html">Contact Us</a>
-                    </li>
-                    <li>
-                        <a 
-                            href="about_us.html">About</a>
-                    </li>
-                   
-
-
-
                 </ul>
             </nav>
             <span class="burgerMenu">
@@ -90,40 +80,32 @@
 
 <section class="appointment">
     <div class="container">
-        <h1>Schedule Now</h1>
+        <h1>Request Help Form</h1>
         <div class="appointment-container">
-            <div class="map-area">
-                <div id="map" style="width:400px;height:450px;background:grey">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d131740.87804459277!2d-106.78958050518573!3d52.153876633799385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f6bf47ed992b%3A0x5049e3295772690!2sSaskatoon%2C%20SK!5e0!3m2!1sen!2sca!4v1638241804462!5m2!1sen!2sca" width="600" height="530" style="border:0;" allowfullscreen="" loading="lazy"></iframe></iframe>
-                </div>  
-            </div>
+
             <div class="appointment-do">
                 <form method="POST" id="appointment" onsubmit="return submitForm()">
                     <div class="field">
                         <label>NAME</label>
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="name" id="name" size="50">
                     </div>
                     <div class="field">
                         <label>EMAIL</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" size="50">
                     </div>
                     <div class="field">
-                        <label>VOLUNTEER SERVICE </label>
-                        <select name="SERVICE" id="SERVICE">
-                        <option value="Soup Kitchens">Soup Kitchens</option>
-                        <option value="Street Clean-Up">Street Clean-Up</option>
-                        <option value="Safety Patrols">Safety Patrols</option>
-                        <option value="Sports Volunteering">Sports Volunteering</option>
-                        <option value="Teaching">Teaching</option>
-                        </select>
+                        <label>PHONE</label>
+                        <input type="phone" name="Phone" id="Phone" size="50">
                     </div>
                     <div class="field">
-                        <label>APPOINTMENT DATE</label>
-                        <input type="date" name="date" id="date">
+                        <label>ADDRESS</label>
+                        <input type="text" name="address" id="address" min-size="50">
                     </div>
-                    <div class="discription">
-                        <label>DESCRIPTION</label>
-                        <textarea name="discription" id="discription" cols="15" rows="5"></textarea>
+                    <div class="field">
+                        <label>SERVICE</label>
+                        <input type="checkbox" name="service" value="Food">Food<br>
+                        <input type="checkbox" name="service" value="Shelter">Shelter<br>
+                        <input type="checkbox" name="service" value="Supplies">Supplies<br>
                     </div>
                     <input type="submit" name="appointment" value="Submit">
                 </form>
@@ -163,7 +145,7 @@
      </h2>
      <p>
      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-     <a href="register.html">Register</a>
+     <a href="register.html">Requests</a>
      </p>
     
      <p>
