@@ -329,6 +329,7 @@ h1{
 }
 .appointment{
   padding: 30px 0px 30px 0px;
+
 }
 .appointment h1{
   color: #000;
@@ -339,27 +340,33 @@ h1{
 }
 .appointment .appointment-container{
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 50px 0px;
+
 }
-.appointment-container .map-area{
-  width: 45%;
-}
+
 .appointment-container .appointment-do{
   width: 45%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .appointment-do .field{
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+  align-items: center;
+
 }
 .field label{
   font-size: 16px;
   font-weight: 500;
   color: #000;
   padding: 10px;
+  width: 26%;
+
+
 }
 .field input{
   margin-left: 10px;
@@ -368,39 +375,10 @@ h1{
   outline: none;
   border-radius: 4px;
   width: 90%;
-  
-}
-
-.appointment-do .dropdown {
-  display: inline-block;
-}
-
-.appointment-do .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
 
 
-.appointment-do .discription label{
-  font-size: 16px;
-  font-weight: 500;
-  color: #000;
-  display: block;
-  padding: 6px;
 }
-.appointment-do .discription textarea{
-  display: block;
-  width: 100%;
-  padding: 6px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  outline: none;
-}
+
 .appointment-do input[type="submit"]{
   background-color: #5baa8e;
   color: #fff;
