@@ -1,89 +1,42 @@
 <!DOCTYPE html>
 <html>
+
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
+
+
 <head>
-    <style>
-        .heading{
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 32px;
-        }
-        .sbuttons p{
-            text-align: center;
-            color: #111;
-            font-weight: 600;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
 
-        .sbuttons p > button{
-            background: transparent;
-            color: black;
-            border: 2px solid black;
-            border-radius: 25px;
-            text-align: center;
-            width: 270px;
-            font-size: 18px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            cursor: pointer;
-            display: inline-block;
-            -webkit-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-            transition: all 0.4s;
-        }
-        .sbuttons p > button:hover{
-            background-color:#5baa8e;
-            color: black;
-            font-weight: bold;
-            -webkit-transition: all 0.4s;
-            -moz-transition: all 0.4s;
-            transition: all 0.4s;
-        }
-
-        .sbuttons p > button:focus{
-            background-color:#5baa8e;
-            font-weight: bold;
-            color: black;
-        }
-
-        #staff {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            text-align: center;
-        }
-
-        #staff td, #staff th {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-
-        #staff tr:nth-child(even){background-color: #f2f2f2;}
-
-        #staff tr:hover {background-color: #ddd;}
-
-        #staff th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #5baa8e;
-            color: white;
-            text-align: center;
-        }
-    </style>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
+
+</div>
+
+<header id="header">
+
+    <div class="menu-bar">
+        <a href="index.html" class="logo">
+            <b>Dashboard</b> Volunteer Saskatoon
+        </a>
+        <div class="button-area">
+            <a href="Log_in.html">Admin Logout</a>
+        </div>
+
+    </div>
+
+
+</header>
 <body>
 <div class = "heading">
     <h2>Staff Table</h2>
 </div>
 
 <div class="sbuttons">
-    <p><button type="button" class="button button1">Add Staff</button></p>
-    <p><button type="button" class="button button2">Delete Staff</button></p>
-    <p><button type="button" class="button button3">Edit Selected Staff</button></p>
+    <button onclick="window.location.href='addstaff.html'" type="button" class="button button1">Add Staff</button>
+    <button type="button" class="button button2">Delete Staff</button>
+    <button type="button" class="button button3">Edit Selected Staff</button>
 </div>
 
 
@@ -104,9 +57,9 @@
 </div>
 
 <div class="sbuttons">
-    <p><button type="button" class="button button1">Add Client</button></p>
-    <p><button type="button" class="button button2">Delete Client</button></p>
-    <p><button type="button" class="button button3">Edit Selected Client</button></p>
+    <button type="button" class="button button1">Add Client</button>
+    <button type="button" class="button button2">Delete Client</button>
+    <button type="button" class="button button3">Edit Selected Client</button>
 </div>
 
 
@@ -204,13 +157,13 @@
     // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
     function addClient() {
         // Adds new entry to the database, can also be used to update entries
-        let entryName = "Aakash Thaker";
-        let entryEmail = "art602@usask.ca";
-        let entryPhone = 1234567890;
-        let entryAddress = "2956 Preston Ave S";
-        let entryServiceFood = true;
-        let entryServiceShelter = false;
-        let entryServiceSupplies = false;
+        let entryName = document.forms["appointment"]["name"].value;
+        let entryEmail = document.forms["appointment"]["email"].value;
+        let entryPhone = document.forms["appointment"]["Phone"].value;
+        let entryAddress = document.forms["appointment"]["address"].value;
+        let entryServiceFood = document.forms["appointment"]["service"].value;
+        let entryServiceShelter = document.forms["appointment"]["service"].value;
+        let entryServiceSupplies = document.forms["appointment"]["service"].value;
 
         let clientCount = document.getElementById("client").rows.length; // returns the number of current entries
 
