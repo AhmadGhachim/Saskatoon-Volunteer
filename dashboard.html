@@ -35,7 +35,7 @@
 
 <div class="sbuttons">
     <button onclick="window.location.href='addstaff.html'" type="button" class="button button1">Add Staff</button>
-    <button type="button" class="button button2">Delete Staff</button>
+    <button type="button" class="button button2" onclick="removeStaff()">Delete Staff</button>
     <button type="button" class="button button3">Edit Selected Staff</button>
 </div>
 
@@ -57,7 +57,7 @@
 </div>
 
 <div class="sbuttons">
-    <button type="button" class="button button1">Add Client</button>
+    <button onclick="window.location.href='addclient.html'" type="button" class="button button1">Add Client</button>
     <button type="button" class="button button2">Delete Client</button>
     <button type="button" class="button button3">Edit Selected Client</button>
 </div>
@@ -109,30 +109,8 @@
             });
         });
     });
-    // TODO for Ahmad: create an interface which asks for inputs from the user
-    // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
-    function addStaff() {
-        // Adds new entry to the database, can also be used to update entries
-        let entryName = "Aakash Thaker";
-        let entryAddress = "2956 Preston Ave S";
-        let entryEmail = "art602@usask.ca";
-        let entryPhone = "1234567890";
-        let entryAge = 21;
-        let entryDepartment = "Computer Science";
 
-        let staffCount = document.getElementById("staff").rows.length; // returns the number of current entries
 
-        firebase.database().ref("staff/s" + (staffCount + 1)).set({
-            Name: entryName,
-            Address: entryAddress,
-            Email: entryEmail,
-            Phone: entryPhone,
-            Age: entryAge,
-            Department: entryDepartment
-        });
-    }
-
-    // TODO for Ahmad: create a style (similar to staff table) for clients table
     let selectedClientRow = null;
     // Updates table on webpage whenever new entry is added
     firebaseRef.ref("clients").on("value" , function(snapshot) {
@@ -153,30 +131,6 @@
             });
         });
     });
-    // TODO for Ahmad: create an interface which asks for inputs from the user
-    // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
-    function addClient() {
-        // Adds new entry to the database, can also be used to update entries
-        let entryName = document.forms["appointment"]["name"].value;
-        let entryEmail = document.forms["appointment"]["email"].value;
-        let entryPhone = document.forms["appointment"]["Phone"].value;
-        let entryAddress = document.forms["appointment"]["address"].value;
-        let entryServiceFood = document.forms["appointment"]["service"].value;
-        let entryServiceShelter = document.forms["appointment"]["service"].value;
-        let entryServiceSupplies = document.forms["appointment"]["service"].value;
-
-        let clientCount = document.getElementById("client").rows.length; // returns the number of current entries
-
-        firebase.database().ref("clients/c" + (clientCount + 1)).set({
-            Name: entryName,
-            Email: entryEmail,
-            Phone: entryPhone,
-            Address: entryAddress,
-            ServiceFood: entryServiceFood,
-            ServiceShelter: entryServiceShelter,
-            ServiceSupplies: entryServiceSupplies
-        });
-    }
 
 </script>
 </body>

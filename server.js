@@ -11,29 +11,6 @@ const PORT = 8000;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Listen
 app.listen(PORT);
 console.log("Listening to the port " + PORT);
