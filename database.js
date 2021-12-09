@@ -81,32 +81,6 @@ function saveStaff(){
     alert('Saved new staff member.');
 }
 
-// function get() {
-//     var username = document.getElementById('username').value
-//
-//     var user_ref = database.ref('users/' + username)
-//     user_ref.on('value', function(snapshot) {
-//         var data = snapshot.val()
-//
-//         alert(data.email)
-//
-//     })
-//
-// }
-//
-// function update() {
-//     var username = document.getElementById('username').value
-//     var email = document.getElementById('email').value
-//     var password = document.getElementById('password').value
-//
-//     var updates = {
-//         email : email,
-//         password : password
-//     }
-//
-//     database.ref('users/' + username).update(updates)
-//
-//     alert('updated')
-// }
-//
+
+
 

@@ -13,6 +13,10 @@ app.get("/register.html", (req, res) => {
     res.sendFile(__dirname + "/register.html");
 });
 
+app.get("/",(req,res) =>{
+    res.sendFile("index.html")
+})
+
 
 // Listen
 app.listen(PORT);

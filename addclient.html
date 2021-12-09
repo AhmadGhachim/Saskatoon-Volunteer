@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-    <script src="database.js"></script>
 </head>
 
 <header id="header">
@@ -39,7 +36,7 @@
                 </div>
                 <div class="field">
                     <label>PHONE</label>
-                    <input type="tel" name="Phone" id="phone" size="50" placeholder="Ex. 306-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                    <input type="tel" name="Phone" id="Phone" size="50" placeholder="Ex. 306-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
                 </div>
                 <div class="field">
                     <label>ADDRESS</label>
@@ -47,9 +44,9 @@
                 </div>
                 <div class="field">
                     <label>SERVICE</label>
-                    <input type="checkbox" name="service" id="food">Food<br>
-                    <input type="checkbox" name="service" id="shelter">Shelter<br>
-                    <input type="checkbox" name="service" id="supplies">Supplies<br>
+                    <input type="checkbox" name="service" value="Food">Food<br>
+                    <input type="checkbox" name="service" value="Shelter">Shelter<br>
+                    <input type="checkbox" name="service" value="Supplies">Supplies<br>
                 </div>
                 <input type="submit" name="appointment" onclick="saveClients()">
             </form>
@@ -60,4 +57,10 @@
 
 </div>
 </body>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="database.js"></script>
 </html>
