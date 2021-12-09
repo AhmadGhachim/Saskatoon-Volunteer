@@ -81,7 +81,7 @@
         <div class="appointment-container">
 
             <div class="appointment-do">
-                <form method="POST" id="appointment" onsubmit="return submitForm()">
+                <form id="appointment">
                     <div class="field">
                         <label>NAME</label>
                         <input type="text" name="name" id="name" size="50" placeholder="Ex. John Doe">
@@ -104,7 +104,7 @@
                         <input type="checkbox" name="service" value="Shelter">Shelter<br>
                         <input type="checkbox" name="service" value="Supplies">Supplies<br>
                     </div>
-                    <input type="submit" name="appointment" value="Submit">
+                    <input type="submit" name="appointment" onclick="saveClients()">
                 </form>
 
             </div>

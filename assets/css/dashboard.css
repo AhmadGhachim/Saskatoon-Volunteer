@@ -91,27 +91,32 @@
 }
 
 #container{
-    width: 80%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
-
-
-}
-#addStaff p{
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
     text-align: center;
 
 }
+
+#addStaff p{
+    width: 60%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
 #button_container{
     text-align: center;
     color: #111;
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 20px;
+    align-items: center;
 
 }
+
 #button_container input[type="submit"]{
     text-align: center;
     color: #111;
@@ -123,14 +128,6 @@
 }
 #Checkboxes{
     display: flex;
-    flex-direction: row;
     align-items: center;
-    text-align: center;
-    margin-left: 0px;
-
-}
-#Checkboxes label {
-    display: block;
-    padding-left: -15px;
-    text-indent: -15px;
+    display: flex;
 }

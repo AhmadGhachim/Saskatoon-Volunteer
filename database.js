@@ -111,6 +111,7 @@ function saveStaff(){
 //     alert('updated')
 // }
 //
+
 function removeStaff() {
 
     database.ref('Staff/s').remove()
