@@ -36,7 +36,7 @@
                 </div>
                 <div class="field">
                     <label>PHONE</label>
-                    <input type="tel" name="Phone" id="Phone" size="50" placeholder="Ex. 306-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+                    <input type="tel" name="phone" id="phone" size="50" placeholder="Ex. 306-000-0000">
                 </div>
                 <div class="field">
                     <label>ADDRESS</label>
@@ -44,11 +44,16 @@
                 </div>
                 <div class="field">
                     <label>SERVICE</label>
-                    <input type="checkbox" name="service" value="Food">Food<br>
-                    <input type="checkbox" name="service" value="Shelter">Shelter<br>
-                    <input type="checkbox" name="service" value="Supplies">Supplies<br>
+                    <input type="checkbox" name="service" value="Food" id="food">Food<br>
+                    <input type="checkbox" name="service" value="Shelter" id="shelter">Shelter<br>
+                    <input type="checkbox" name="service" value="Supplies" id="supplies">Supplies<br>
                 </div>
-                <input type="submit" name="appointment" onclick="saveClients()">
+                <input type="submit" name="appointment" onclick="function saveAndRedirect(){
+                    // FixMe for Ahmad
+                    saveClients();
+                    window.location.replace('dashboard.html');
+                }saveAndRedirect();" value="Submit">
+
             </form>
 
         </div>

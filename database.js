@@ -1,3 +1,5 @@
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
     authDomain: "project-d7d80.firebaseapp.com",
@@ -26,7 +28,7 @@ database.ref("count").on("value" , function(snapshot) {
 });
 
 function saveClients() {
-    let entryName =document.getElementById('name').value;
+    let entryName = document.getElementById('name').value;
     let entryEmail = document.getElementById('email').value;
     let entryPhone = document.getElementById('phone').value;
     let entryAddress = document.getElementById('address').value;
@@ -46,15 +48,14 @@ function saveClients() {
     clientCount += 1;
 
     database.ref("count").set({
-        clients:clientCount,
-        staff:staffCount
+        clients: clientCount,
+        staff: staffCount
     })
 
     alert('Saved new client.');
 }
 
 function saveStaff(){
-
     // Adds new entry to the database, can also be used to update entries
     let entryName = document.getElementById('Stfname').value;
     let entryAddress = document.getElementById('Stfadd').value;
@@ -75,8 +76,8 @@ function saveStaff(){
     staffCount += 1;
 
     database.ref("count").set({
-        clients:clientCount,
-        staff:staffCount
+        clients: clientCount,
+        staff: staffCount
     })
     alert('Saved new staff member.');
 }

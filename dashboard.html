@@ -108,7 +108,9 @@
     });
 
     let selectedStaffRow = null;
+    let selectedStaffRowColor = null;
     let selectedClientRow = null;
+    let selectedClientRowColor = null;
     /**
      * Displays the entries on the webpage if admin has logged in
      */
@@ -127,8 +129,11 @@
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["Age"]));
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["Department"]));
                     newRow.addEventListener("click", function () {
-                        alert("Selected "+newRow.id);
+                        if (selectedStaffRow != null)
+                            document.getElementById(selectedStaffRow).style.backgroundColor = selectedStaffRowColor;
+                        selectedStaffRowColor = document.getElementById(newRow.id).style.backgroundColor
                         selectedStaffRow = newRow.id;
+                        newRow.style.backgroundColor= "#c3e3d8";
                     });
                 });
             });
@@ -147,8 +152,11 @@
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["ServiceShelter"]));
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["ServiceSupplies"]));
                     newRow.addEventListener("click", function () {
-                        alert("Selected "+newRow.id);
+                        if (selectedClientRow != null)
+                            document.getElementById(selectedClientRow).style.backgroundColor = selectedClientRowColor;
+                        selectedClientRowColor = document.getElementById(newRow.id).style.backgroundColor
                         selectedClientRow = newRow.id;
+                        newRow.style.backgroundColor= "#c3e3d8";
                     });
                 });
             });
@@ -167,6 +175,9 @@
             staff:staffCount
         })
 
+        selectedStaffRow = null;
+        selectedStaffRowColor = null;
+
         alert('Deleted staff member '+ staffId);
     }
 
@@ -179,6 +190,9 @@
             clients:clientCount,
             staff:staffCount
         })
+
+        selectedClientRow = null;
+        selectedClientRowColor = null;
 
         alert('Deleted client '+clientId);
     }
