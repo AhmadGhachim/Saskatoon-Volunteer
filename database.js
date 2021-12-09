@@ -1,5 +1,3 @@
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
     authDomain: "project-d7d80.firebaseapp.com",
@@ -17,6 +15,18 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 let staffCount = 0;
 let clientCount = 0;
+
+let staffAddCounter = 1;
+let clientAddCounter = 1;
+
+database.ref("addCount").on("value" , function(snapshot) {
+    snapshot.forEach(function (element) {
+        if (element.key === "clients")
+            clientAddCounter = element.val();
+        else
+            staffAddCounter = element.val();
+    });
+});
 
 database.ref("count").on("value" , function(snapshot) {
     snapshot.forEach(function (element) {
@@ -36,7 +46,7 @@ function saveClients() {
     let entryServiceShelter = document.getElementById('shelter').checked;
     let entryServiceSupplies = document.getElementById('supplies').checked;
 
-    firebase.database().ref("clients/c" + (clientCount + 1)).set({
+    firebase.database().ref("clients/c" + (clientAddCounter)).set({
         Name: entryName,
         Email: entryEmail,
         Phone: entryPhone,
@@ -46,6 +56,7 @@ function saveClients() {
         ServiceSupplies: entryServiceSupplies
     })
     clientCount += 1;
+    clientAddCounter += 1;
 
     database.ref("count").set({
         clients: clientCount,
@@ -64,7 +75,7 @@ function saveStaff(){
     let entryAge = document.getElementById('Stfage').value;
     let entryDepartment = document.getElementById('Stfdep').value;
 
-    firebase.database().ref("staff/s" + (staffCount + 1)).set({
+    firebase.database().ref("staff/s" + (staffAddCounter)).set({
         Name: entryName,
         Address: entryAddress,
         Email: entryEmail,
@@ -74,6 +85,7 @@ function saveStaff(){
     });
 
     staffCount += 1;
+    staffAddCounter += 1;
 
     database.ref("count").set({
         clients: clientCount,
