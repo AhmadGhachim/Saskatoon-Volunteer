@@ -81,8 +81,6 @@ function saveStaff(){
     alert('Saved new staff member.');
 }
 
-
-
 // function get() {
 //     var username = document.getElementById('username').value
 //
@@ -111,11 +109,4 @@ function saveStaff(){
 //     alert('updated')
 // }
 //
-
-function removeStaff() {
-
-    database.ref('Staff/s').remove()
-
-    alert('deleted')
-}
 
