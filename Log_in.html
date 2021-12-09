@@ -24,7 +24,7 @@
     </form>
   </div>
 <script>
-  
+
   const firebaseConfig = {
     apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
     authDomain: "project-d7d80.firebaseapp.com",
@@ -36,8 +36,8 @@
   };
   firebase.initializeApp(firebaseConfig);
 
-  let email = "admin@volunteersask.ca";
-  let password = "admin123456";
+  // let email = "admin@volunteersask.ca";
+  // let password = "admin123456";
   let auth = firebase.auth();
   auth.signInWithEmailAndPassword(email, password)
   .then(function(){
