@@ -35,7 +35,10 @@
         <p><input placeholder="age" type="number" id="Stfage"/></p>
         <p><input placeholder="Department" type="text" id="Stfdep"/></p>
         <div id="button_container">
-            <input type="submit" onclick="saveStaff()" value="Submit">
+            <input type="submit" onclick="function saveAndRedirect(){
+                    saveStaff();
+                    window.location.replace('dashboard.html');
+                }saveAndRedirect();" value="Submit">
         </div>
     </div>
 
