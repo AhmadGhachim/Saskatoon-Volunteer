@@ -17,6 +17,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="database.js"></script>
 
 </head>
 
@@ -92,7 +93,7 @@
                     </div>
                     <div class="field">
                         <label>PHONE</label>
-                        <input type="tel" name="Phone" id="Phone" size="50" placeholder="Ex. 306-000-000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+                        <input type="tel" name="Phone" id="phone" size="50" placeholder="Ex. 306-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                     </div>
                     <div class="field">
                         <label>ADDRESS</label>
@@ -100,9 +101,9 @@
                     </div>
                     <div class="field">
                         <label>SERVICE</label>
-                        <input type="checkbox" name="service" value="Food">Food<br>
-                        <input type="checkbox" name="service" value="Shelter">Shelter<br>
-                        <input type="checkbox" name="service" value="Supplies">Supplies<br>
+                        <input type="checkbox" name="service" id="food">Food<br>
+                        <input type="checkbox" name="service" id="shelter">Shelter<br>
+                        <input type="checkbox" name="service" id="supplies">Supplies<br>
                     </div>
                     <input type="submit" name="appointment" onclick="saveClients()">
                 </form>
@@ -197,43 +198,6 @@
     </div>
     
     </section>
-<script>
-    const firebaseConfig = {
-        apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
-        authDomain: "project-d7d80.firebaseapp.com",
-        databaseURL: "https://project-d7d80-default-rtdb.firebaseio.com",
-        projectId: "project-d7d80",
-        storageBucket: "project-d7d80.appspot.com",
-        messagingSenderId: "620442025289",
-        appId: "1:620442025289:web:64139d5d8da3f90937ae98"
-    };
-    firebase.initializeApp(firebaseConfig);
-
-    // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
-    function addClient() {
-        // Adds new entry to the database, can also be used to update entries
-        let entryName = "Aakash Thaker";
-        let entryEmail = "art602@usask.ca";
-        let entryPhone = 1234567890;
-        let entryAddress = "2956 Preston Ave S";
-        let entryServiceFood = true;
-        let entryServiceShelter = false;
-        let entryServiceSupplies = false;
-
-        // let staffCount = document.getElementById("client").rows.length; // returns the number of current entries
-        let clientCount = 0 // TODO for Avi: find a way to get number of clients
-
-        firebase.database().ref("clients/c" + (clientCount + 1)).set({
-            Name: entryName,
-            Email: entryEmail,
-            Phone: entryPhone,
-            Address: entryAddress,
-            ServiceFood: entryServiceFood,
-            ServiceShelter: entryServiceShelter,
-            ServiceSupplies: entryServiceSupplies
-        });
-    }
-</script>
 </body>
 
 </html>
