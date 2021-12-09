@@ -15,7 +15,12 @@
             <b>Dashboard</b> Volunteer Saskatoon
         </a>
         <div class="button-area">
-            <a href="Log_in.html">Admin Logout</a>
+            <a href="Log_in.html" onclick="function logout() {
+                firebase.auth().signOut().then(() => {
+                }).catch((error) => {
+                });
+            }
+            logout()">Admin Logout</a>
         </div>
     </div>
 
