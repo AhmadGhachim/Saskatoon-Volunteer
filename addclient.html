@@ -19,26 +19,31 @@
 
 </header>
 <div class = "heading">
-    <h2>Add Staff</h2>
+    <h2>Add Client</h2>
 </div>
 <body>
 <div id="container">
 
     <div id="addStaff" class="field">
-        <p><input placeholder="name" type="text" id="Stfname"/></p>
-        <p><input placeholder="address" type="text" id="Stfadd"/></p>
-        <p><input placeholder="email" type="email" id="stfemail"/></p>
-        <p><input placeholder="Phone" type="number" id="StfPhone"/></p>
-        <p><input placeholder="age" type="number" id="Stfage"/></p>
-        <p><input placeholder="Department" type="text" id="Stfdep"/></p>
+        <p><input placeholder="name" type="text" id="name"/></p>
+        <p><input placeholder="email" type="email" id="email"/></p>
+        <p><input placeholder="Phone" type="number" id="Phone"/></p>
+        <p><input placeholder="address" type="text" id="address"/></p>
+        <div id="Checkboxes">
+            <input type="checkbox" name="service" id="food" value="Food">Food<br>
+            <input type="checkbox" name="service" id="shelter" value="Shelter">Shelter<br>
+            <input type="checkbox" name="service" id="supplies" value="Supplies">Supplies<br>
+
+         </div>
         <div id="button_container">
-            <input type="submit" onclick="saveStaff()" value="Submit">
+            <input type="submit" onclick="saveClients()" value="Submit">
         </div>
     </div>
 
 
 </div>
 </body>
+
 
 
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

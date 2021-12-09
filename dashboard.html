@@ -36,7 +36,7 @@
 
 <div class="sbuttons">
     <button onclick="window.location.href='addstaff.html'" type="button" class="button button1">Add Staff</button>
-    <button type="button" class="button button2">Delete Staff</button>
+    <button type="button" class="button button2" onclick="removeStaff()">Delete Staff</button>
     <button type="button" class="button button3">Edit Selected Staff</button>
 </div>
 
@@ -58,7 +58,7 @@
 </div>
 
 <div class="sbuttons">
-    <button type="button" class="button button1">Add Client</button>
+    <button onclick="window.location.href='addclient.html'" type="button" class="button button1">Add Client</button>
     <button type="button" class="button button2">Delete Client</button>
     <button type="button" class="button button3">Edit Selected Client</button>
 </div>
@@ -123,6 +123,7 @@
                     });
                 });
             });
+
             // TODO for Ahmad: create an interface which asks for inputs from the user
             // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
             function addStaff() {
@@ -166,8 +167,8 @@
                         selectedClientRow = newRow.id;
                     });
                 });
-            });
-            // TODO for Ahmad: create an interface which asks for inputs from the user
+              
+    // TODO for Ahmad: create an interface which asks for inputs from the user
             // TODO for Ahmad: replace with inputs from the webpage, add function call to submit button
             function addClient() {
                 // Adds new entry to the database, can also be used to update entries
