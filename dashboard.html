@@ -36,7 +36,7 @@
 
 <div class="sbuttons">
     <button onclick="window.location.href='addstaff.html'" type="button" class="button button1">Add Staff</button>
-    <button type="button" class="button button2" onclick="removeStaff()">Delete Staff</button>
+    <button type="button" class="button button2" onclick="removeStaff(selectedStaffRow)">Delete Staff</button>
     <button type="button" class="button button3">Edit Selected Staff</button>
 </div>
 
@@ -59,7 +59,7 @@
 
 <div class="sbuttons">
     <button onclick="window.location.href='addclient.html'" type="button" class="button button1">Add Client</button>
-    <button type="button" class="button button2">Delete Client</button>
+    <button type="button" class="button button2" onclick="removeClient(selectedClientRow)">Delete Client</button>
     <button type="button" class="button button3">Edit Selected Client</button>
 </div>
 
@@ -77,9 +77,10 @@
 
 </table>
 <script>
+
     const staffTable = document.getElementById("staff");
     const clientsTable = document.getElementById("clients");
-    const firebaseConfig = {
+    let firebaseConfig = {
         apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
         authDomain: "project-d7d80.firebaseapp.com",
         databaseURL: "https://project-d7d80-default-rtdb.firebaseio.com",
@@ -90,6 +91,17 @@
     };
     firebase.initializeApp(firebaseConfig);
     let firebaseRef = firebase.database();
+    let staffCount = 0;
+    let clientCount = 0;
+
+    firebaseRef.ref("count").on("value" , function(snapshot) {
+        snapshot.forEach(function (element) {
+            if (element.key === "clients")
+                clientCount = element.val();
+            else
+                staffCount = element.val();
+        });
+    });
 
     // let email = "admin@volunteersask.ca";    // TODO for Ahmad: Code to sign in user, add this to the webpage on log in
     // let password = "admin123456";
@@ -102,9 +114,13 @@
     //     // An error happened.
     // });
 
+    let selectedStaffRow = null;
+    let selectedClientRow = null;
+    /**
+     * Displays the entries on the webpage if admin has logged in
+     */
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            let selectedStaffRow = null;
             // Updates table on webpage whenever new entry is added
             firebaseRef.ref("staff").on("value", function (snapshot) {
                 staffTable.innerHTML = "<tr> <th>Name</th> <th>Address</th> <th>Email</th> <th>Phone</th> <th>Age</th> <th>Department</th> </tr>";
@@ -118,13 +134,12 @@
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["Age"]));
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["Department"]));
                     newRow.addEventListener("click", function () {
-                        alert("Selected " + newRow.id);
-                        selectedClientRow = newRow.id;
+                        alert("Selected "+newRow.id);
+                        selectedStaffRow = newRow.id;
                     });
                 });
             });
 
-            let selectedClientRow = null;
             // Updates table on webpage whenever new entry is added
             firebaseRef.ref("clients").on("value", function (snapshot) {
                 clientsTable.innerHTML = "<tr> <th>Name</th> <th>Email</th> <th>Phone</th> <th>Address</th> <th>Service Food</th> <th>Service Shelter</th> <th>Service Supplies</th> </tr>";
@@ -139,7 +154,7 @@
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["ServiceShelter"]));
                     newRow.insertCell(-1).appendChild(document.createTextNode(element.val()["ServiceSupplies"]));
                     newRow.addEventListener("click", function () {
-                        alert("Selected " + newRow.id);
+                        alert("Selected "+newRow.id);
                         selectedClientRow = newRow.id;
                     });
                 });
@@ -149,6 +164,31 @@
             alert("Admin not signed in!");
     });
 
+    function removeStaff(staffId){
+        firebase.database().ref("staff/"+staffId).remove();
+
+        staffCount -= 1;
+
+        firebase.database().ref("count").set({
+            clients:clientCount,
+            staff:staffCount
+        })
+
+        alert('Deleted staff member '+ staffId);
+    }
+
+    function removeClient(clientId){
+        firebase.database().ref("clients/"+clientId).remove();
+
+        clientCount -= 1;
+
+        firebase.database().ref("count").set({
+            clients:clientCount,
+            staff:staffCount
+        })
+
+        alert('Deleted client '+clientId);
+    }
 </script>
 </body>
 </html>

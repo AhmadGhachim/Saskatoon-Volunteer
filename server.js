@@ -1,14 +1,17 @@
-const admin = require("firebase-admin");
 const express = require("express");
 let app = express();
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-const PORT = 8000;
+const PORT = 8080;
 
-
-// TODO: Work on this
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/index.html");
+});
+app.get("/register.html", (req, res) => {
+    res.sendFile(__dirname + "/register.html");
+});
 
 
 // Listen
