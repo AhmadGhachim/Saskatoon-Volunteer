@@ -161,8 +161,10 @@
                 });
             });
         }
-        else
+        else {
             alert("Admin not signed in!");
+            window.location.replace("Log_in.html");
+        }
     });
 
     function removeStaff(staffId){
