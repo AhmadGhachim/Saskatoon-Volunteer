@@ -101,11 +101,10 @@ function saveStaff(){
 //     alert('updated')
 // }
 //
-// function remove() {
-//     var username = document.getElementById('username').value
-//
-//     database.ref('users/' + username).remove()
-//
-//     alert('deleted')
-// }
+function removeStaff() {
+
+    database.ref('Staff/s').remove()
+
+    alert('deleted')
+}
 
