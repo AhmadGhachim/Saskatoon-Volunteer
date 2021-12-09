@@ -1,6 +1,3 @@
-// Your web app's Firebase configuration
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyCCYDb16UPC6WEnJc08Jegk026CKVtHykU",
     authDomain: "project-d7d80.firebaseapp.com",
@@ -12,11 +9,21 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-
 firebase.initializeApp(firebaseConfig);
 
 // Set database variable
-var database = firebase.database()
+const database = firebase.database();
+let staffCount = 0;
+let clientCount = 0;
+
+database.ref("count").on("value" , function(snapshot) {
+    snapshot.forEach(function (element) {
+        if (element.key === "clients")
+            clientCount = element.val();
+        else
+            staffCount = element.val();
+    });
+});
 
 function saveClients() {
     let entryName =document.getElementById('name').value;
@@ -27,10 +34,6 @@ function saveClients() {
     let entryServiceShelter = document.getElementById('shelter').value;
     let entryServiceSupplies = document.getElementById('supplies').value;
 
-    //let clientCount = document.getElementById("client").rows.length; // returns the number of current entries
-    clientCount =1;
-
-
     firebase.database().ref("clients/c" + (clientCount + 1)).set({
         Name: entryName,
         Email: entryEmail,
@@ -40,10 +43,15 @@ function saveClients() {
         ServiceShelter: entryServiceShelter,
         ServiceSupplies: entryServiceSupplies
     })
+    clientCount += 1;
 
-    alert('Saved')
+    database.ref("count").set({
+        clients:clientCount,
+        staff:staffCount
+    })
+
+    alert('Saved new client.');
 }
-
 
 function saveStaff(){
 
@@ -55,9 +63,6 @@ function saveStaff(){
     let entryAge = document.getElementById('Stfage').value;
     let entryDepartment = document.getElementById('Stfdep').value;
 
-    //let staffCount = document.getElementById("staff").rows.length; // returns the number of current entries
-    let staffCount = 2;
-
     firebase.database().ref("staff/s" + (staffCount + 1)).set({
         Name: entryName,
         Address: entryAddress,
@@ -67,9 +72,14 @@ function saveStaff(){
         Department: entryDepartment
     });
 
-    alert('Saved');
-}
+    staffCount += 1;
 
+    database.ref("count").set({
+        clients:clientCount,
+        staff:staffCount
+    })
+    alert('Saved new staff member.');
+}
 
 
 
