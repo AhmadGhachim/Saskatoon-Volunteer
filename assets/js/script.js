@@ -1,34 +1,34 @@
-function submitForm() {
-    var full_name = document.forms["appointment"]["name"].value;
-    var email = document.forms["appointment"]["email"].value;
-    var service = document.forms["appointment"]["service"].value;
-    var date = document.forms["appointment"]["date"].value;
-    var discription = document.getElementById("discription").value;
-    if (full_name == "") {
-      alert("Please Enter the Name");
-      return false;
-    }
-    else if(email == ""){
-        alert("Please Enter the Email");
-      return false;
-    }
-    else if(service == ""){
-        alert("Please Enter the Service");
-      return false;
-    }
-    else if(date == ""){
-      alert("Please Enter the Date");
-    return false;
-  }
-    else if(discription == ""){
-        alert("Please Enter the Discription");
-      return false;
-    }
-    else{
-        alert("Apointment Confirmed..!!!"+"\n\n"+"Your Name :" + full_name + "\n\n"+ "Your Email :"+email + "\n\n"+"Your Service:"+service+"\n\n"+ "Appointment Date:"+date+"\n\n" +"Your Discription:" + discription);
-        return true;
-    }
-}  
+// function submitForm() {
+//     var full_name = document.forms["appointment"]["name"].value;
+//     var email = document.forms["appointment"]["email"].value;
+//     var service = document.forms["appointment"]["service"].value;
+//     var date = document.forms["appointment"]["date"].value;
+//     var discription = document.getElementById("discription").value;
+//     if (full_name == "") {
+//       alert("Please Enter the Name");
+//       return false;
+//     }
+//     else if(email == ""){
+//         alert("Please Enter the Email");
+//       return false;
+//     }
+//     else if(service == ""){
+//         alert("Please Enter the Service");
+//       return false;
+//     }
+//     else if(date == ""){
+//       alert("Please Enter the Date");
+//     return false;
+//   }
+//     else if(discription == ""){
+//         alert("Please Enter the Discription");
+//       return false;
+//     }
+//     else{
+//         alert("Apointment Confirmed..!!!"+"\n\n"+"Your Name :" + full_name + "\n\n"+ "Your Email :"+email + "\n\n"+"Your Service:"+service+"\n\n"+ "Appointment Date:"+date+"\n\n" +"Your Discription:" + discription);
+//         return true;
+//     }
+//}
   
 function changetextImages(str){
  var imageElement = document.getElementById('service_image');

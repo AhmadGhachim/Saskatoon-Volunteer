@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+
+<header id="header">
+
+    <div class="menu-bar">
+        <a href="index.html" class="logo">
+            <b>Dashboard</b> Volunteer Saskatoon
+        </a>
+        <div class="button-area">
+            <a href="Log_in.html">Admin Logout</a>
+        </div>
+    </div>
+
+</header>
+<body>
+<div id="container">
+
+
+    <div id="form_container">
+        <p><input placeholder="name" type="text" id="Stfname"/></p>
+        <p><input placeholder="address" type="text" id="Stfadd"/></p>
+        <p><input placeholder="email" type="email" id="stfemail"/></p>
+        <p><input placeholder="Phone" type="number" id="StfPhone"/></p>
+        <p><input placeholder="age" type="number" id="Stfage"/></p>
+        <p><input placeholder="Department" type="text" id="Stfdep"/></p>
+    </div>
+
+    <div id="button_container">
+        <button id="submit" onclick="saveStaff()"> SUBMIT </button>
+    </div>
+
+</div>
+</body>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="database.js"></script>
+</html>
