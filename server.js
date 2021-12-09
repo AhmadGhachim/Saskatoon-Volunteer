@@ -6,17 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const PORT = 8080;
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
-app.get("/register.html", (req, res) => {
-    res.sendFile(__dirname + "/register.html");
-});
-
-app.get("/",(req,res) =>{
-    res.sendFile("index.html")
-})
-
+app.use('/', express.static(__dirname + '/'));
 
 // Listen
 app.listen(PORT);
