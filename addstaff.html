@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <script>
-        //TODO: change staff to look like clients page
     </script>
 </head>
 
@@ -28,22 +27,42 @@
 <div id="container">
 
     <div id="addStaff" class="field">
-        <p><input placeholder="name" type="text" id="Stfname"/></p>
-        <p><input placeholder="address" type="text" id="Stfadd"/></p>
-        <p><input placeholder="email" type="email" id="stfemail"/></p>
-        <p><input placeholder="Phone" type="number" id="StfPhone"/></p>
-        <p><input placeholder="age" type="number" id="Stfage"/></p>
-        <p><input placeholder="Department" type="text" id="Stfdep"/></p>
-        <div id="button_container">
+        <form id="appointment">
+            <div class="field">
+                <label>NAME</label>
+                <input type="text" name="name" id="Stfname" size="50" placeholder="Ex. John Doe">
+            </div>
+            <div class="field">
+                <label>ADDRESS</label>
+                <input type="text" name="address" id="Stfadd" min-size="50" placeholder="Ex. 150 Main St, Saskatoon">
+            </div>
+            <div class="field">
+                <label>EMAIL</label>
+                <input type="email" name="email" id="stfemail" size="50" placeholder="Ex. info@volunteer-saskatoon.ca">
+            </div>
+            <div class="field">
+                <label>PHONE</label>
+                <input type="tel" name="phone" id="StfPhone" size="50" placeholder="Ex. 306-000-0000">
+            </div>
+            <div class="field">
+                <label>AGE</label>
+                <input type="number" name="age" id="Stfage" size="50" placeholder="Ex. 21">
+            </div>
+            <div class="field">
+                <label>DEPARTMENT</label>
+                <input type="text" name="department" id="Stfdep" size="50" placeholder="Ex. Soup Kitchen">
+            </div>
+            <div id="button_container">
             <input type="submit" onclick="function saveAndRedirect(){
                     saveStaff();
-                    window.location.replace('dashboard.html');
+                    location.replace('dashboard.html');
                 }saveAndRedirect();" value="Submit">
-        </div>
+            </div>
+        </form>
     </div>
-
-
 </div>
+
+
 </body>
 
 
