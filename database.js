@@ -28,11 +28,11 @@ database.ref("count").on("value" , function(snapshot) {
 function saveClients() {
     let entryName =document.getElementById('name').value;
     let entryEmail = document.getElementById('email').value;
-    let entryPhone = document.getElementById('Phone').value;
+    let entryPhone = document.getElementById('phone').value;
     let entryAddress = document.getElementById('address').value;
-    let entryServiceFood = document.getElementById('food').value;
-    let entryServiceShelter = document.getElementById('shelter').value;
-    let entryServiceSupplies = document.getElementById('supplies').value;
+    let entryServiceFood = document.getElementById('food').checked;
+    let entryServiceShelter = document.getElementById('shelter').checked;
+    let entryServiceSupplies = document.getElementById('supplies').checked;
 
     firebase.database().ref("clients/c" + (clientCount + 1)).set({
         Name: entryName,

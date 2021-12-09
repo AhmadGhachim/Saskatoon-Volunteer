@@ -5,13 +5,10 @@ let app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-function isLoggedIn(){
-    return admin.auth();
-}
 const PORT = 8000;
 
 
-
+// TODO: Work on this
 
 
 // Listen
