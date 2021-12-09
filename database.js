@@ -19,7 +19,7 @@ let clientCount = 0;
 let staffAddCounter = 1;
 let clientAddCounter = 1;
 
-database.ref("addCount").on("value" , function(snapshot) {
+database.ref("addCounter").on("value" , function(snapshot) {
     snapshot.forEach(function (element) {
         if (element.key === "clients")
             clientAddCounter = element.val();
@@ -46,7 +46,7 @@ function saveClients() {
     let entryServiceShelter = document.getElementById('shelter').checked;
     let entryServiceSupplies = document.getElementById('supplies').checked;
 
-    firebase.database().ref("clients/c" + (clientAddCounter)).set({
+    firebase.database().ref("clients/c" + clientAddCounter).set({
         Name: entryName,
         Email: entryEmail,
         Phone: entryPhone,
@@ -58,9 +58,15 @@ function saveClients() {
     clientCount += 1;
     clientAddCounter += 1;
 
+
     database.ref("count").set({
         clients: clientCount,
         staff: staffCount
+    })
+
+    database.ref("addCounter").set({
+        clients: clientAddCounter,
+        staff: staffAddCounter
     })
 
     alert('Saved new client.');
@@ -75,7 +81,7 @@ function saveStaff(){
     let entryAge = document.getElementById('Stfage').value;
     let entryDepartment = document.getElementById('Stfdep').value;
 
-    firebase.database().ref("staff/s" + (staffAddCounter)).set({
+    firebase.database().ref("staff/s" + staffAddCounter).set({
         Name: entryName,
         Address: entryAddress,
         Email: entryEmail,
@@ -91,6 +97,12 @@ function saveStaff(){
         clients: clientCount,
         staff: staffCount
     })
+
+    database.ref("addCounter").set({
+        clients: clientAddCounter,
+        staff: staffAddCounter
+    })
+
     alert('Saved new staff member.');
 }
 
