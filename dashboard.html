@@ -22,7 +22,13 @@
             <b>Dashboard</b> Volunteer Saskatoon
         </a>
         <div class="button-area">
-            <a onclick="logout()">Admin Logout</a>
+            <a href="Log_in.html" onclick="function logout() {
+                firebase.auth().signOut().then(() => {
+                }).catch((error) => {
+                });
+            }
+            logout()">Admin Logout</a>
+
         </div>
 
     </div>
@@ -100,14 +106,6 @@
                 staffCount = element.val();
         });
     });
-
-
-
-    // firebase.auth().signOut().then(() => {  // TODO for Ahmad: Code to sign out user, add this to the dashboard webpage
-    //     // Sign-out successful.
-    // }).catch((error) => {
-    //     // An error happened.
-    // });
 
     let selectedStaffRow = null;
     let selectedClientRow = null;
